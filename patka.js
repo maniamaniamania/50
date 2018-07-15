@@ -13,15 +13,11 @@ while (gramy) {
     else if (numer == 50) console.log("Liczba jest równa 50");
     else if (numer < 50) console.log("Liczba jest mniejsza od 50");
 
-
-    const odpowiedz = ask.question("Chcesz grac dalej? <tak, nie>: ").trim().toLowerCase();
-    while (true) {
-        if (odpowiedz == "nie")
-            gramy = false;
-        else if (odpowiedz != "tak") {
-            console.log("Możesz wybrać tylko odpowiedź tak lub nie");
-            const odpowiedz = ask.question("Chcesz grac dalej? <tak, nie>: ").trim().toLowerCase();
-        }
+    var odpowiedz = ask.question("Chcesz grac dalej? <tak, nie>: ").trim().toLowerCase();
+    while (odpowiedz != "tak" && odpowiedz != "nie") {
+        console.log("Tylko TAK lub NIE!");
+        odpowiedz = ask.question("Chcesz grac dalej? <tak, nie>: ").trim().toLowerCase();
     }
-
+    if (odpowiedz == "nie")
+        gramy = false;
 }
